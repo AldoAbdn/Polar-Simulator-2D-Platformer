@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public int jumpPower = 10;
     public int movementPower = 10;
     public bool isJumping = false;
+    public GameObject bullet;
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -41,8 +42,8 @@ public class Player : MonoBehaviour
         }
         // Shoot
         else if(Input.GetKeyDown (KeyCode.Space)) 
-        { 
-            // Spawn Bullet
+        {
+            Instantiate(bullet, transform, false);
         }
     }
 }
